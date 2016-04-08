@@ -36,13 +36,11 @@ app.controller('PostDetailCtrl', [
 
         this.getPost = function() {
             PostApi.get(function(data) {
-                console.log(data);
                 _this.post = data;
                 _this.getCommentsPost();
                 _this.getUser(_this.post.userId);
                 _this.httpError.post = false
             }, function(error) {
-                console.log(error);
                 _this.httpError.post = true;
             });
         }();
