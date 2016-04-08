@@ -1,0 +1,11 @@
+# npm
+/node_modules
+
+# Assets managed by Bower
+/bower_components
+
+# Assets managed by Grunt
+/web/assets/*
+
+# PHPSTORM
+.idea/*

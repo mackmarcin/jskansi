@@ -1,0 +1,16 @@
+.search {
+    margin-bottom: 30px;
+    padding-right: 10px;
+    padding-left: 10px;
+    border: 2px solid #5bc0de;
+    border-radius: 10px;
+}
+
+.elem {
+    height:140px;
+    margin-bottom: 30px;
+    padding-right: 10px;
+    padding-left: 10px;
+    border: 2px solid #5bc0de;
+    border-radius: 10px;
+}

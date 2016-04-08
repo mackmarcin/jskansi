@@ -1,0 +1,28 @@
+<div ng-if="ctrl.httpError.post" class="alert-danger">
+    <h5>Error retrieving post detail data</h5>
+</div>
+<div ng-if="ctrl.httpError.user" class="alert-warning">
+    <h5>Error retrieving user data</h5>
+</div>
+<div ng-if="ctrl.httpError.comments" class="alert-warning">
+    <h5>Error retrieving comment data</h5>
+</div>
+<div ng-if="!ctrl.httpError.post">
+    <div>
+        <h2>{{ ctrl.post.title }}</h2>
+        <p>{{ ctrl.post.body }}</p>
+    </div>
+    <div class="panel panel-group" ng-if="!ctrl.httpError.user">
+        <div>Author:</div>
+        <div>{{ ctrl.post.user.name }}</div>
+        <div>{{ ctrl.post.user.email }}</div>
+    </div>
+    <div class="list-group" ng-if="!ctrl.httpError.comments">
+        <h4>Comments:</h4>
+        <div class="list-group-item" ng-repeat="comment in ctrl.post.comments">
+            <h4>{{ comment.name }}</h4>
+            <p>{{ comment.body }}</p>
+            <span class="label label-info">{{ comment.email }}</span>
+        </div>
+    </div>
+</div>

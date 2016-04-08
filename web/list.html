@@ -1,0 +1,25 @@
+<div class="row" ng-if="!ctrl.httpError">
+    <div class="col-md-12">
+        <input class="search" type="text" ng-model="search" placeholder="Title search" />
+    </div>
+    <div class="col-md-3" dir-paginate="post in ctrl.posts | filter:{title:search} | itemsPerPage: 16" pagination-id="postPagination">
+        <div class="elem" ui-sref="post_details({id: post.id})">
+            <h5>
+                {{ post.title }}
+            </h5>
+            <p>
+                {{ post.body | limitTo: 60 }}{{post.body.length > 20 ? '...' : ''}}
+            </p>
+        </div>
+    </div>
+    <div class="col-md-12">
+        <dir-pagination-controls boundary-links="true" pagination-id="postPagination" on-page-change="pageChangeHandler(newPageNumber)"></dir-pagination-controls>
+    </div>
+</div>
+<div class="row" ng-if="ctrl.httpError">
+    <div class="col-md-12 alert-danger">
+        <h5>Error retrieving posts data</h5>
+    </div>
+</div>
+
+
